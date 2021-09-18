@@ -18,6 +18,7 @@
   --box-shadow-card-team: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   --box-shadow-card-gallery: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
   --border-radius-card-team: 0px 0px 4px 4px;
+  --main-text-color: #757575;
   --color-icon: #757575;
   --color-icon-footer: #ffffff;
   --background-color-icon-card-team: #ffffff;
@@ -229,6 +230,7 @@ font-style: normal;
 }
 .link:hover,
 .link:focus {
+  color: var(--accent-color);
 fill: var(--accent-color);
 }
 .icon-contact {
@@ -753,7 +755,7 @@ padding-left: 16px;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   z-index: 1;
-  transition: opacity 250ms, visibility 250ms;
+  transition: opacity, visibility;
   transition-duration: 250ms;
   transition-timing-function: var(--timing-function);
   cursor: pointer;
@@ -805,10 +807,6 @@ letter-spacing: 0.03em;
 color: var(--main-title-color);
 margin-bottom: 12px;
 }
-.modal-label:focus-within .icon-input-modal {
- fill: #2196F3;
- border-color: blue;
-}
 .modal-label {
   display: block;
   position: relative;
@@ -821,10 +819,25 @@ color: #757575;
 margin-bottom: 10px;
 }
 .container-for-modals-icon {
+  display: block;
   position: relative;
+}
+.modal-input:hover,
+.modal-input:focus {
+  border-color: var(--accent-color);
+  fill: var(--accent-color);
+}
+.modal-label:focus-within .icon-input-modal {
+   border-color: var(--accent-color);
+  fill: var(--accent-color);
+}
+.container-icon-in-input:hover .icon-input-modal {
+   border-color: var(--accent-color);
+  fill: var(--accent-color);
 }
 .icon-input-modal {
   position: absolute;
+  display: inline-block;
   z-index: 1;
   top: 50%;
   left: 12px;
@@ -844,6 +857,9 @@ border-radius: 4px;
   padding-bottom: 12px;
   margin-top: 4px;
   cursor: pointer;
+   transition-property: border-color; 
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
 }
 .label-modal-textarea {
   margin-bottom: 20px;
@@ -864,9 +880,6 @@ cursor: pointer;
 }
 .modal-label-check {
   display: block;
-font-style: normal;
-font-weight: normal;
-font-size: 14px;
 line-height: 1.7;
 letter-spacing: 0.03em;
 color: #757575;
@@ -878,6 +891,11 @@ justify-content: center;
 }
 .modal-input-checkbox {
   position: absolute;
+  left: 40px;
+  bottom: 140px;
+}
+.agreement {
+  display: block;
 }
 .modal-link-agreement {
   display: inline-block;
@@ -886,29 +904,33 @@ justify-content: center;
   margin-left: 0.3rem;
 }
 .icon-checkbox {
-display: inline-block;
+  display: inline-block;
 margin-right: 8.38px;
 align-self: center;
+border: 2px solid black;
+border-radius: 2px;
 width: 16px;
 height: 15px;
-background-image: url('data:image/svg+xml,%3Csvg width="16" height="15" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M14.222 1.667v11.666H1.778V1.667h12.444Zm0-1.667H1.778C.8 0 0 .75 0 1.667v11.666C0 14.25.8 15 1.778 15h12.444C15.2 15 16 14.25 16 13.333V1.667C16 .75 15.2 0 14.222 0Z" fill="%23212121"/%3E%3C/svg%3E');
 background-color: inherit;
+transition-property: border-color, background-image;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
 }
 .modal-input-checkbox:checked + .icon-checkbox {
  display: block;
 margin-right: 8.38px;
 width: 16px;
 height: 15px;
+border-color: var(--accent-color);
 background-color: var(--accent-color);
 background-image: url('data:image/svg+xml,%3Csvg width="16" height="15" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Crect width="16" height="15" rx="2" fill="%232196F3"/%3E%3Cpath d="m3.957 7.752-.069-.066-.069.065-.888.842-.076.072.076.073 3.496 3.334.069.066.069-.066 7.504-7.158.076-.073-.076-.072-.882-.841-.069-.066-.069.066-6.553 6.246-2.539-2.422Z" fill="%23fff" stroke="%23fff" stroke-width=".2"/%3E%3C/svg%3E');
 block-size: contain;
 background-origin: border-box;
 border-radius: 2px;
 }
-.modal-input-checkbox:focus + .icon-checkbox {
-background-image: url('data:image/svg+xml,%3Csvg width="16" height="15" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M14.222 1.667v11.666H1.778V1.667h12.444Zm0-1.667H1.778C.8 0 0 .75 0 1.667v11.666C0 14.25.8 15 1.778 15h12.444C15.2 15 16 14.25 16 13.333V1.667C16 .75 15.2 0 14.222 0Z" fill="%23212121"/%3E%3C/svg%3E');
+.modal-container-input:hover .icon-checkbox,
+.modal-container-input:focus .icon-checkbox {
+  border-color: var(--accent-color);
 }
-.modal-input-checkbox:checked:focus + .icon-checkbox {
-   background-image: url('data:image/svg+xml,%3Csvg width="16" height="15" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Crect width="16" height="15" rx="2" fill="%232196F3"/%3E%3Cpath d="m3.957 7.752-.069-.066-.069.065-.888.842-.076.072.076.073 3.496 3.334.069.066.069-.066 7.504-7.158.076-.073-.076-.072-.882-.841-.069-.066-.069.066-6.553 6.246-2.539-2.422Z" fill="%23fff" stroke="%23fff" stroke-width=".2"/%3E%3C/svg%3E');
-}
+
 
