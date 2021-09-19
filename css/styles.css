@@ -927,6 +927,7 @@ background-image: url('data:image/svg+xml,%3Csvg width="16" height="15" fill="no
 block-size: contain;
 background-origin: border-box;
 border-radius: 2px;
+border: transparent;
 }
 .modal-container-input:hover .icon-checkbox,
 .modal-container-input:focus .icon-checkbox {
