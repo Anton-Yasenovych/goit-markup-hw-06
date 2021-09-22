@@ -12,6 +12,8 @@
   --font-size-16: font-size: 16px;
   --header-line-color: #ececec;
   --footer-line-color: #2f303a;
+  --chexbox-border: 2px solid black;
+  --border-textarea: 1px solid rgba(33, 33, 33, 0.2);
   --color-border-focus-card-gall: solid #EEEEEE;
   --box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   --card-set-background-color: #ffffff;
@@ -869,9 +871,9 @@ border-radius: 4px;
   min-width: 100%;
   min-height: 120px;
   margin-top: 4px;
-  border: 1px solid rgba(33, 33, 33, 0.2);
+  border: VAR(--border-textarea);
 box-sizing: border-box;
-border-radius: 4px;
+border-radius: var(--border-radius-4);
 padding-top: 12px;
 padding-right: var(--font-size-16);
 padding-bottom: 12px;
@@ -882,7 +884,7 @@ cursor: pointer;
   display: block;
 line-height: 1.7;
 letter-spacing: 0.03em;
-color: #757575;
+color: var(--color-icon);
 }
 .modal-container-input {
    display: flex;
@@ -907,14 +909,13 @@ justify-content: center;
   display: inline-block;
 margin-right: 8.38px;
 align-self: center;
-border: 2px solid black;
+border: var(--chexbox-border);
 border-radius: 2px;
 width: 16px;
 height: 15px;
 background-color: inherit;
 transition-property: border-color, background-image;
-  transition-duration: 250ms;
-  transition-timing-function: var(--timing-function);
+cursor: pointer;
 }
 .modal-input-checkbox:checked + .icon-checkbox {
  display: block;
@@ -929,8 +930,8 @@ background-origin: border-box;
 border-radius: 2px;
 border: transparent;
 }
-.modal-container-input:hover .icon-checkbox,
-.modal-container-input:focus .icon-checkbox {
+.icon-checkbox:hover,
+.icon-checkbox:focus {
   border-color: var(--accent-color);
 }
 
